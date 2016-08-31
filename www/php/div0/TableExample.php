@@ -13,7 +13,7 @@ class TableExample {
     public function __construct(){
         $this->map = new Map();
         $this->createRows();
-        new BaseTable($this->map);
+        new BaseTable('myTable', $this->map);
     }
 
     private function createRows(){

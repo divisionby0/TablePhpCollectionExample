@@ -2,16 +2,16 @@
 
 class BaseTable {
 
+
     private $data;
     private $htmlContent = '';
     private $prefix;
     private $postfix;
 
-    public function __construct($data){
-
+    public function __construct($id, $data){
         if($data && $data->size()>0){
             $this->data = $data;
-            $this->createPrefixAndPostfix();
+            $this->createPrefixAndPostfix($id);
             $this->createContent();
             $this->draw();
         }
@@ -20,8 +20,8 @@ class BaseTable {
         }
     }
 
-    private function createPrefixAndPostfix(){
-        $this->prefix = '<table id="myTable">';
+    private function createPrefixAndPostfix($id){
+        $this->prefix = '<table id="'.$id.'">';
         $this->postfix = '</table>';
     }
     private function createContent(){
