@@ -21,13 +21,12 @@ class BaseTable {
     }
 
     private function createPrefixAndPostfix(){
-        $this->prefix = '<table>';
+        $this->prefix = '<table id="myTable">';
         $this->postfix = '</table>';
     }
     private function createContent(){
         $this->createColumnLabels();
 
-        // create from data
         $this->createContentFromData();
     }
 
